@@ -22,9 +22,10 @@ public class CursoController {
 	@Autowired
 	private CursoService  cursoService;
 	
+	@SuppressWarnings("unchecked")
 	@GetMapping("/curso")
-	public @ResponseBody List<Curso> getAll(){
-		return cursoService.getAll();
+	public @ResponseBody ResponseEntity<List<Curso>> getAll(){
+		return  (ResponseEntity<List<Curso>>) cursoService.getAll();
 	}
 	
 	@PostMapping("/curso")
